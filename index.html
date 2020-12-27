@@ -14,6 +14,7 @@
         font: 16px Monaco, monospace;
         background-color: #fefefe;
         color: #000000;
+        
         }
 
     a {
@@ -114,23 +115,23 @@
         }
 
 
-    object {
-        width: 700px;
-        text-align: justify;
-        text-justify: inter-word;  
+    iframe {
+        width: 720px;
         }
 
 
     .publications-data {
-        height: 1600px;
+        height: 2750px;
         }
 
     .activities-data {
-        height: 1000px;    
+        height: 1700px;    
         }
 
     </style>
 
+     
+    
 </head>
 
 <body>
@@ -167,7 +168,81 @@ Contact me:<br>
 
     <p style="color: #a2a2a2; font-style: italic !important;">(This site was last updated in 1 Jan 2021.)</p>
     
-</p>
+
+    <script 
+  type="text/JavaScript" 
+  language="JavaScript">
+<!-- 
+//
+// format date as dd-mmm-yy
+// example: 12-Jan-99
+//
+function date_ddmmmyy(date)
+{
+  var d = date.getDate();
+  var m = date.getMonth() + 1;
+  var y = date.getYear();
+
+  // handle different year values 
+  // returned by IE and NS in 
+  // the year 2000.
+  if(y >= 2000)
+  {
+    y -= 2000;
+  }
+  if(y >= 100)
+  {
+    y -= 100;
+  }
+
+  // could use splitString() here 
+  // but the following method is 
+  // more compatible
+  var mmm = 
+    ( 1==m)?'Jan':( 2==m)?'Feb':(3==m)?'Mar':
+    ( 4==m)?'Apr':( 5==m)?'May':(6==m)?'Jun':
+    ( 7==m)?'Jul':( 8==m)?'Aug':(9==m)?'Sep':
+    (10==m)?'Oct':(11==m)?'Nov':'Dec';
+
+  return "" +
+    (d<10?"0"+d:d) + "-" +
+    mmm + "-" +
+    (y<10?"0"+y:y);
+}
+
+
+//
+// get last modified date of the 
+// current document.
+//
+function date_lastmodified()
+{
+  var lmd = document.lastModified;
+  var s   = "Unknown";
+  var d1;
+
+  // check if we have a valid date
+  // before proceeding
+  if(0 != (d1=Date.parse(lmd)))
+  {
+    s = "" + date_ddmmmyy(new Date(d1));
+  }
+
+  return s;
+}
+
+//
+// finally display the last modified date
+// as DD-MMM-YY
+//
+document.write( 
+  "This page was updated on " + 
+  date_lastmodified() );
+
+// -->
+</script>
+    
+    
 </div>
     
 <div class="photo"><img class="pic" src="pic.jpg"><br>Photo by Tinksu Haapalainen</div>
@@ -176,19 +251,18 @@ Contact me:<br>
 <div class="publications">
     <h1 id="publications">Publications</h1>
     <p>
+    <iframe class="publications-data" src="publications.html" scrolling="no" frameborder="0"></iframe>
+    </p>
     
-    <object class="publications-data" data="publications.txt">
-You have a browser that does not support objects. Please use another browser.
-        </object></p>
     </div>
 
 
+    
+    
 <div class="activities">
     <h1 id="activities">Activities</h1>
 <p>
-    <object class="activities-data" data="activities.txt">
-You have a browser that does not support objects. Please use another browser.
-        </object>    
+    <iframe class="activities-data" src="activities.html" scrolling="no" frameborder="0"></iframe>
     </p></div>    
     
     
