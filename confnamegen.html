@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Conference Title Generator</title>
+
+  </head>
+
+<style>
+body {
+	font: 16px Monaco, monospace;
+	background-color: #ededed;	
+	}
+
+footer {
+	padding-top: 250px;
+
+}
+
+#tulos {
+	font: 64px Monaco, monospace;
+	color: #ff02c075;
+	font-weight: 900;
+	text-transform: uppercase;
+	}
+</style>
+
+    <script 
+  type="text/JavaScript" 
+  language="JavaScript">
+
+function generate() {
+
+	var alkuosa = ["Reconnecting", "Reconfiguring", "Ambient", "Ubiquitous", "Arguing", "Developments in", "Past and Present of", "Interrogating", "Foundational ideas of", "Visible and Invisible", "Excluding", "Locating", "Representing", "Illuminating", "Determining", "Calculating", "Estimating", "Future of", "Pursuing", "Declining", "New positions in", "Prevailing Trends of the", "End of", "Resilience of", "Scrutinizing", "The Lasting Appeal of", "Transformations in", "Popular", "Politicians and", "Critical Aproaches to", "Rethinking", "Imagining", "Structure of", "Assessing", "New and old ideas in", "paradigmatic", "Boundaries of", "The consensual", "Abandoning the field of", "The private sector and", "Media representations of", "Historical perspectives on", "Data science and", "Quantitative methods in", "Qualitative methods in", "Theory and", "Conceptual foundations of", "The new generations and", "academic publishing and", "The fringes of", "careers in", "elevating"]
+
+	var concept =  document.getElementById("concept").value;
+
+	document.getElementById('johdatus').innerHTML = "A title for conference:";
+
+	document.getElementById('tulos').innerHTML = alkuosa[Math.floor(Math.random()*alkuosa.length)]+ " "+ concept;
+}
+
+  </script>
+  <body>
+<p><h1>
+Conference Title Generator
+</h1>	</p>
+
+  <p>by @TuomasAysto</p>
+
+	<p>
+	<label for="concept">Type a central concept from your field below:</label></p>
+
+<textarea id="concept" name="concept" rows="1" cols="50">
+Society
+</textarea>
+<p>
+<button onclick="generate()">Generate!</button>
+</p>
+<p>
+<div id="johdatus"></div>
+</p>
+
+
+<p>
+<div id="tulos">
+</div>
+</p>
+
+
+
+
+
+  </body>
+</html>
